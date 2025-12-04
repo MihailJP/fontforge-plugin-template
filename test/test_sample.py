@@ -11,8 +11,10 @@ import fontforge
 ])
 def test_helloEnable(data, glyphname):
     from fontforge_hello.__main__ import hello, helloEnable
-    font = fontforge.font()
-    font.createMappedChar(glyphname)
-    assert helloEnable(data, font[glyphname]) == True
-    hello(data, font[glyphname])
-    font.close()
+    try:
+        font = fontforge.font()
+        font.createMappedChar(glyphname)
+        assert helloEnable(data, font[glyphname]) == True
+        hello(data, font[glyphname])
+    finally:
+        font.close()
