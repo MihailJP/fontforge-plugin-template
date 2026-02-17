@@ -14,7 +14,7 @@ def test_helloEnable(data, glyphname):
     try:
         font = fontforge.font()
         font.createMappedChar(glyphname)
-        assert helloEnable(data, font[glyphname]) == True
+        assert helloEnable(data, font[glyphname])
         hello(data, font[glyphname])
     finally:
         font.close()

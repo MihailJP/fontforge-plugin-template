@@ -1,5 +1,6 @@
 import fontforge
 
+
 def hello(u, glyph):
     fontforge.postNotice("FontForge Plugin Template", "Hello, world!")
 
